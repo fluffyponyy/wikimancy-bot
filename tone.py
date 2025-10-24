@@ -123,9 +123,9 @@ def get_omen_sentence(tone, nouns):
 
 
 def get_sentence_filler(sing_nouns):
+    sing_nouns = [x for x in sing_nouns if x != "links"] #appears a lot, is useless
     if len(sing_nouns) == 0:
         return "infinite paths"
-    sing_nouns = [x for x in sing_nouns if x != "links"] #appears a lot, is useless
     index = random.randint(0, len(sing_nouns)-1)
     return sing_nouns[index].lower()
 

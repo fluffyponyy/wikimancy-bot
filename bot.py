@@ -36,7 +36,7 @@ def get_random_wikipedia_page(title):
     while attempts < 10:
         try:
             page = wikipedia.page(title, auto_suggest=False)
-            if len(page.content) < 550:
+            if len(page.content) < 600: #a higher standard leads to higher quality pages, but more loops in case of stubs
                 return get_random_wikipedia_page(wikipedia.random(pages=1))
             return page
         except wikipedia.exceptions.DisambiguationError as e:

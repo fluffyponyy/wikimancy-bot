@@ -53,7 +53,7 @@ positive_templates = ["Your luck will lead you to {}.",
                       "Prosperity and {} will visit you.",
                       "Your path will be plentifully lined with {}.",
                       "You will be rewarded with {}.",
-                      "Gifts of {} await you."
+                      "Gifts of {} await you.",
                       "Golden {} are in your future."]
 
 def get_symbol(prop_nouns):
@@ -82,7 +82,7 @@ def get_house(categories):
         if re.match(r"^\d{3,4}.*", cat):
             continue
         # remove categories with too generic words (optional)
-        if any(word in cat_lower for word in ["list", "links"]):
+        if any(word in cat_lower for word in ["list", "links", "cs1"]):
             continue
         filtered.append(cat)
     
@@ -125,8 +125,9 @@ def get_omen_sentence(tone, nouns):
 def get_sentence_filler(sing_nouns):
     if len(sing_nouns) == 0:
         return "infinite paths"
+    sing_nouns = [x for x in sing_nouns if x != "links"] #appears a lot, is useless
     index = random.randint(0, len(sing_nouns)-1)
-    return sing_nouns[index]
+    return sing_nouns[index].lower()
 
 def get_omen(tone_score, prop_nouns, sing_nouns, categories):
     sentiment = get_sentiment_label(tone_score)

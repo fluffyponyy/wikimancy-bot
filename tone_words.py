@@ -15,7 +15,7 @@ melancholic = [
     "uncertainty", "longing", "nostalgia", "solitude", "melancholy", "wistfulness", "reflection", "regret", "quietude", "yearning",
     "pondering", "introspection", "sorrow", "resignation", "homesickness", "lament", "loneliness",
     "despondency", "brooding", "mourning", "sentimentality", "retrospection", "contemplation", "pensiveness", "heartache", "remorse", "grief",
-    "melancholia", "forlornness", "recollection", "reverie", "pining", "wistfulnesses", "sadness", "reminiscence", "thoughtfulness", "quietness", "the moon"
+    "melancholia", "forlornness", "recollection", "pining", "wistfulnesses", "sadness", "reminiscence", "thoughtfulness", "quietness", "the moon"
    
 ]
 

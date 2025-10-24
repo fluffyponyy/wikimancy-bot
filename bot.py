@@ -36,11 +36,11 @@ def get_random_wikipedia_page(title):
     while attempts < 10:
         try:
             page = wikipedia.page(title, auto_suggest=False)
-            if len(page.content) < 500:
+            if len(page.content) < 550:
                 return get_random_wikipedia_page(wikipedia.random(pages=1))
             return page
         except wikipedia.exceptions.DisambiguationError as e:
-            # filter out meta options
+            # filter out meta options when randomly picking disambiguation
             filtered = [
                 opt for opt in e.options 
                 if not opt.lower().startswith("all pages") and not opt.lower().endswith("(disambiguation)")
@@ -48,10 +48,8 @@ def get_random_wikipedia_page(title):
             if not filtered:
                 filtered = e.options
             title = random.choice(filtered)
-            print(f"Disambiguation encountered, picking: {title}")
             attempts += 1
         except wikipedia.exceptions.PageError:
-            print(f"PageError encountered for {title}, picking a random option from previous disambiguation...")
             # fallback: pick random from previous options if available
             if 'filtered' in locals() and filtered:
                 title = random.choice(filtered)

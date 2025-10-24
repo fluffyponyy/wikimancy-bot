@@ -59,7 +59,6 @@ def get_random_wikipedia_page(title):
             attempts += 1
     raise Exception("Failed to resolve a valid Wikipedia page after 10 attempts.")
     
-nlp = spacy.load("en_core_web_sm")
 
 
 def average_vader_score(words):
@@ -77,12 +76,14 @@ def average_vader_score(words):
     return avg_score
 
 
+print("Drawing your fortune...")
+nlp = spacy.load("en_core_web_sm")
 
-for i in range (1, 100):
+
+for i in range (1, 2):
     page_title = wikipedia.random(pages=1)
     random_page = get_random_wikipedia_page(page_title)
-    print(random_page.title)
-    #print(random_page.summary)
+
     doc = nlp(random_page.content)
     nouns = {token.text for token in doc if token.pos_ == "NOUN"}
 
@@ -93,6 +94,8 @@ for i in range (1, 100):
 
     score = average_vader_score(nouns.union(adjectives))
 
+    print("Your fortune:")
     print(get_omen(score, proper_nouns, singular_nouns, random_page.categories))
+    print(f"(drawn from: {random_page.url})")
 
     print("\n")

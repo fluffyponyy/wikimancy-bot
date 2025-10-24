@@ -29,7 +29,7 @@ neutral = [
 ]
 
 hopeful = [
-    "promise", "potential", "possibility", "opportunity", "optimism", "anticipation", "expectation", "hope",
+    "promise", "potential", "possibility", "opportunity", "optimism", "anticipation", "hope",
     "aspiration", "growth", "progress", "light", "confidence", "encouragement", "faith",
     "prospect", "favor", "good fortunes ahead", "cheer", "advancement", "positivity", "uplift", "favorability", "prosperity",
     "upbeatness", "expectancy", "advantage", "strength", "motivation",

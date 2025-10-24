@@ -75,6 +75,8 @@ def get_house(categories):
     filtered = []
     for cat in categories:
         cat_lower = cat.lower()
+        if re.search(r"use .* english", cat_lower): #filter out a weird set of categories
+            continue
         # remove meta keywords
         if any(mk in cat_lower for mk in meta_keywords):
             continue

@@ -43,7 +43,7 @@ neutral_templates = ["Expect {} in your future.",
 
 negative_templates = ["Visions of {} will follow you.",
                       "Be wary of the {}.",
-                      "Watch carefully of the {}.",
+                      "Watch carefully of your {}.",
                       "Be warned of the {}.",
                       "There will be {} that haunt you.",
                       "You will be befallen by the {}.",
